@@ -4,14 +4,52 @@ import { celebrate, Joi } from 'celebrate';
 import multer from 'multer';
 import multerConfig from './config/multer';
 
+import UsersController from './controllers/UsersController';
+import SessionController from './controllers/SessionController';
 import PointsController from './controllers/PointsController';
 import ItemsController from './controllers/ItemsController';
 
 const routes = express.Router();
 const upload = multer(multerConfig);
 
+const usersController = new UsersController();
+const sessionController = new SessionController();
 const pointsController = new PointsController();
 const itemsController = new ItemsController();
+
+routes.get('/users/:id', usersController.show);
+routes.post(
+  '/users',
+  celebrate(
+    {
+      body: Joi.object().keys({
+        name: Joi.string().required(),
+        email: Joi.string().required().email(),
+        password: Joi.number().required(),
+      }),
+    },
+    {
+      abortEarly: false,
+    }
+  ),
+  usersController.create
+);
+
+routes.post(
+  '/sessions',
+  celebrate(
+    {
+      body: Joi.object().keys({
+        email: Joi.string().required().email(),
+        password: Joi.number().required(),
+      }),
+    },
+    {
+      abortEarly: false,
+    }
+  ),
+  sessionController.create
+);
 
 routes.get('/items', itemsController.index);
 
