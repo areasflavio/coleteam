@@ -20,8 +20,8 @@ class PointsController {
     const serializedPoints = points.map((point) => {
       return {
         ...point,
-        // image_url: `http://localhost:3333/uploads/${point.image}`, // web
-        image_url: `http://192.168.0.107:3333/uploads/${point.image}`, // mobile
+        image_url: `http://localhost:3333/uploads/${point.image}`, // web
+        // image_url: `http://192.168.0.107:3333/uploads/${point.image}`, // mobile
       };
     });
 
@@ -29,16 +29,8 @@ class PointsController {
   }
 
   async create(req: Request, res: Response) {
-    const {
-      name,
-      email,
-      whatsapp,
-      latitude,
-      longitude,
-      city,
-      uf,
-      items,
-    } = req.body;
+    const { name, email, whatsapp, latitude, longitude, city, uf, items } =
+      req.body;
 
     const trx = await knex.transaction();
 
