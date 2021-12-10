@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
     "knex:seed": "knex --knexfile knexfile.ts seed:run",
-    "knex:migrate": "knex migrate:latest --knexfile knexfile.ts migrate:latest"
+    "knex:migrate": "knex migrate:latest --knexfile knexfile.ts migrate:latest",
+    "test:env": "NODE_ENV=test knex migrate:latest --knexfile knexfile.ts migrate:latest;NODE_ENV=test knex --knexfile knexfile.ts seed:run",
+    "test:dev": "NODE_ENV=test ts-node-dev --ignore-watch node_modules src/server.ts"
   },
   "license": "MIT",
   "dependencies": {
