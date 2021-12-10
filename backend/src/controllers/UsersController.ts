@@ -12,6 +12,12 @@ class UsersController {
   async create(req: Request, res: Response) {
     const { name, email, password } = req.body;
 
+    const findUser = await knex<User>('users').where('email', email).first();
+
+    if (findUser) {
+      return res.status(400).json({ message: 'Email already in use' });
+    }
+
     const user = {
       name,
       email,
