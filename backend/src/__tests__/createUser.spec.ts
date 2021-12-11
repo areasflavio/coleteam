@@ -5,7 +5,7 @@ import app from '../app';
 
 describe('POST /users', function () {
   beforeAll(async () => {
-    await knex('users').where('name', 'John Doe').del();
+    await knex('users').where('email', 'johndoe@example.com').del();
   });
 
   it('should be able to create a new user', function (done) {
@@ -41,7 +41,7 @@ describe('POST /users', function () {
       });
   });
 
-  it("should not be able to create an user with an email that's already in use", function (done) {
+  it("should not be able to create a new user with an email that's already in use", function (done) {
     request(app)
       .post('/users')
       .send({

@@ -8,7 +8,7 @@
     "knex:migrate": "knex migrate:latest --knexfile knexfile.ts migrate:latest",
     "test:env": "NODE_ENV=test knex migrate:latest --knexfile knexfile.ts migrate:latest;NODE_ENV=test knex --knexfile knexfile.ts seed:run",
     "test:dev": "NODE_ENV=test ts-node-dev --ignore-watch node_modules src/server.ts",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest --detectOpenHandles"
   },
   "license": "MIT",
   "dependencies": {
