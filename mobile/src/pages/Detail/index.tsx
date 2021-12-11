@@ -52,9 +52,9 @@ const Detail: React.FC = () => {
   }
 
   function handleWhatsapp() {
-    // Linking.openURL(
-    //   `whatsapp://send?phone=${data.point.whatsapp}&text=Tenho interesse sobre coleta de resíduos`
-    // );
+    Linking.openURL(
+      `whatsapp://send?phone=${data.point.whatsapp}&text=Tenho interesse sobre coleta de resíduos`
+    );
   }
 
   function handleMailComposer() {
