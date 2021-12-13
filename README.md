@@ -25,7 +25,7 @@ da Universidade Federal de Itajubá.
 **📱 APP Mobile**
 
 <p  align="center">
-<img alt="demo" src=".github/coleteam-mobile2.gif" width="25%">
+<img alt="demo" src=".github/coleteam-mobile.gif" width="100%">
 </p>
 
 ## 🧰 Tecnologias
