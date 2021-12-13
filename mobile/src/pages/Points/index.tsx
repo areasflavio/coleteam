@@ -45,7 +45,7 @@ const Points: React.FC = () => {
 
   useEffect(() => {
     async function loadPosition() {
-      const { status } = await Location.requestPermissionsAsync();
+      const { status } = await Location.requestForegroundPermissionsAsync();
 
       if (status !== 'granted') {
         Alert.alert(
