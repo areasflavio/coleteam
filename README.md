@@ -1,5 +1,9 @@
 # COLETEAM
 
+<p align="center">
+<img alt="demo" src=".github/logo.png" width="25%">
+</p>
+
 Este projeto consiste no desenvolvimento de uma
 prova de conceito de um sistema de um protótipo
 completo.
@@ -24,7 +28,7 @@ da Universidade Federal de Itajubá.
 
 **📱 APP Mobile**
 
-<p  align="center">
+<p align="center">
 <img alt="demo" src=".github/coleteam-mobile.gif" width="100%">
 </p>
 
